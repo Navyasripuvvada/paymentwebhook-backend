@@ -3,7 +3,10 @@ import cors from "cors";
 import paymentroutes from "./routes/paymentroutes"
 const app=express();
 app.use(express.json());
-app.use(cors({origin:"https://webhooh-frontend.netlify.app/"}));
+app.use(cors({origin:"https://webhooh-frontend.netlify.app",
+   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  credentials: true
+}));
 app.get("/", (req, res) => {
   res.send("Backend is running");
 });
