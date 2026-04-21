@@ -51,7 +51,7 @@ const startPaymentWindow = (order_id: string) => {
   }, 8000);
 };
 const WebhookCall = async (order_id: string) => {
-  await fetch("http://localhost:3000/api/payment/webhook/payment", {
+  await fetch("https://paymentwebhook-backend.vercel.app/api/payment/webhook/payment", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
